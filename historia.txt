@@ -6,3 +6,8 @@ con git reset CODIGO del que queremos volver
 git reset hard : borra todooo!!!!!
 git reset soft : violvemos a la versión anterior sin borrar el staging
 podemos ver 
+ 
+ git log --stat  poidemos ver loc cmabvios especificos a partir del commit
+
+ git checkout   para ver como era el archivo antes
+ 
