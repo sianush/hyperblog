@@ -56,4 +56,11 @@ git commit -am hace el git add de los cambios, sólo funciona
 copn archivos que ya tenian un ADD previo
 
 
+como crear una rama y moverse entre Ramas
 
+primero se debe tener todos los archivos en commit, sin aprobaciones pendientes en staging
+
+git branch cabecera (nombre) enter
+git show
+
+git checkout nombre (enter)
