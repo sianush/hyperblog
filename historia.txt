@@ -1,15 +1,8 @@
-Esta es la hsitoria de Siana
-hol
-hola
-hol
-ho
-h 
+Notas de Git 
 
-Soy Anais y tengo 33 años
-
-hola
-holhola
-holhola
-hola
-soy Anais 
-hola hola
+como volver en el tiempo para git 
+git log y se copia los códigos del git que queremos recuperar
+con git reset CODIGO del que queremos volver
+git reset hard : borra todooo!!!!!
+git reset soft : violvemos a la versión anterior sin borrar el staging
+podemos ver 
