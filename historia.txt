@@ -7,7 +7,42 @@ git reset hard : borra todooo!!!!!
 git reset soft : violvemos a la versión anterior sin borrar el staging
 podemos ver 
  
- git log --stat  poidemos ver loc cmabvios especificos a partir del commit
+ git log --stat  podemos ver loc cmabvios especificos a partir del commit
 
  git checkout   para ver como era el archivo antes
- 
+
+Clase 14 (repaso)
+git init
+
+git add
+    staging: área de preparación en RAM antes de la base de datos 
+            repositorio local
+            preparación
+            tracket o rastreado
+            temporal
+
+git commit : todo lo de staging se va al área común
+    repositorio remoto
+    github
+    
+        PARA TRABAJAR EN UN SERVIDOR REMOTO 
+     git clone url
+        se trae una copia del master y se genera una base de datos
+        Para ir haciendo modificaciones se sigue colocando
+            git add
+            git commit
+
+        Pero para enviar el HEAD del MASTER se colocando
+            git push 
+            git fetch (cuando alguien trabaja y modifica despues de clonar los archivos)
+             lo trae al repositorio local
+            git merge
+            git pull: 
+                copia el repositorio local
+                la base de datos
+                copia el directorio
+                
+
+
+
+
