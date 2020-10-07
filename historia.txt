@@ -41,8 +41,19 @@ git commit : todo lo de staging se va al área común
                 copia el repositorio local
                 la base de datos
                 copia el directorio
-                
 
+
+Clase 15
+
+Ramas  (branches)
+
+MASTES: rama principal
+    HEAD: commit más reciente
+    CABECERA: se genera una copia del último commit separada hasta hacer merge o fucionar
+
+
+git commit -am hace el git add de los cambios, sólo funciona 
+copn archivos que ya tenian un ADD previo
 
 
 
