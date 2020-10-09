@@ -82,3 +82,16 @@ El merge ocurre en la rama en la que me encuentro
 me voy a head con git checkout master
 merge cabecera
 
+git commit -am (significado) 
+            a=agregar cambios
+            m= mensaje
+
+
+
+
+CLASE 17  Conflictos en merge
+
+Sucede cuando dos programadores modifican las mismas líneas
+Git genera un error
+
+
