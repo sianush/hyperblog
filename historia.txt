@@ -78,3 +78,7 @@ MERGE:
 Flujo de trabajo Git
 
 Cuando se realizan cambios en ambos:
+El merge ocurre en la rama en la que me encuentro
+me voy a head con git checkout master
+merge cabecera
+
