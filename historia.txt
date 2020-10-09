@@ -76,3 +76,5 @@ MERGE:
     la rama cabecera desaparece y se une a la ruta final
     generando una sola rama master
 Flujo de trabajo Git
+
+Cuando se realizan cambios en ambos:
