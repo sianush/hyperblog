@@ -43,7 +43,7 @@ git commit : todo lo de staging se va al área común
                 copia el directorio
 
 
-Clase 15
+CLASE 15
 
 Ramas  (branches)
 
@@ -56,4 +56,29 @@ git commit -am hace el git add de los cambios, sólo funciona
 copn archivos que ya tenian un ADD previo
 
 
+como crear una rama y moverse entre Ramas
+
+primero se debe tener todos los archivos en commit, sin aprobaciones pendientes en staging
+
+git branch cabecera (nombre) enter
+git show
+
+git checkout nombre (enter)
+    de esa manera se mueve entre ramas ejemplo:
+        git checkout cabecera
+        git checkout master
+
+
+
+CLASE 16
+Fusionar dos arhivos distintos (merge)
+MERGE:
+    la rama cabecera desaparece y se une a la ruta final
+    generando una sola rama master
+Flujo de trabajo Git
+
+Cuando se realizan cambios en ambos:
+El merge ocurre en la rama en la que me encuentro
+me voy a head con git checkout master
+merge cabecera
 
