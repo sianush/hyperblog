@@ -64,3 +64,6 @@ git branch cabecera (nombre) enter
 git show
 
 git checkout nombre (enter)
+    de esa manera se mueve entre ramas ejemplo:
+        git checkout cabecera
+        git checkout master
