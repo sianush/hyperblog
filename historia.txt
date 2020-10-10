@@ -12,92 +12,105 @@ podemos ver
  git checkout   para ver como era el archivo antes
 
 Clase 14 (repaso)
-git init
+    git init
 
-git add
-    staging: área de preparación en RAM antes de la base de datos 
-            repositorio local
-            preparación
-            tracket o rastreado
-            temporal
+    git add
+        staging: área de preparación en RAM antes de la base de datos 
+                repositorio local
+                preparación
+                tracket o rastreado
+                temporal
 
-git commit : todo lo de staging se va al área común
-    repositorio remoto
-    github
-    
-        PARA TRABAJAR EN UN SERVIDOR REMOTO 
-     git clone url
-        se trae una copia del master y se genera una base de datos
-        Para ir haciendo modificaciones se sigue colocando
-            git add
-            git commit
+    git commit : todo lo de staging se va al área común
+        repositorio remoto
+        github
+        
+            PARA TRABAJAR EN UN SERVIDOR REMOTO 
+        git clone url
+            se trae una copia del master y se genera una base de datos
+            Para ir haciendo modificaciones se sigue colocando
+                git add
+                git commit
 
-        Pero para enviar el HEAD del MASTER se colocando
-            git push 
-            git fetch (cuando alguien trabaja y modifica despues de clonar los archivos)
-             lo trae al repositorio local
-            git merge
-            git pull: 
-                copia el repositorio local
-                la base de datos
-                copia el directorio
-
-
-CLASE 15
-
-Ramas  (branches)
-
-MASTES: rama principal
-    HEAD: commit más reciente
-    CABECERA: se genera una copia del último commit separada hasta hacer merge o fucionar
+            Pero para enviar el HEAD del MASTER se colocando
+                git push 
+                git fetch (cuando alguien trabaja y modifica despues de clonar los archivos)
+                lo trae al repositorio local
+                git merge
+                git pull: 
+                    copia el repositorio local
+                    la base de datos
+                    copia el directorio
 
 
-git commit -am hace el git add de los cambios, sólo funciona 
-copn archivos que ya tenian un ADD previo
+CLASE 15  Ramas  (branches)
+
+    MASTES: rama principal
+        HEAD: commit más reciente
+        CABECERA: se genera una copia del último commit separada hasta hacer merge o fucionar
 
 
-como crear una rama y moverse entre Ramas
+    git commit -am hace el git add de los cambios, sólo funciona 
+    copn archivos que ya tenian un ADD previo
 
-primero se debe tener todos los archivos en commit, sin aprobaciones pendientes en staging
 
-git branch cabecera (nombre) enter
-git show
+    como crear una rama y moverse entre Ramas
 
-git checkout nombre (enter)
-    de esa manera se mueve entre ramas ejemplo:
-        git checkout cabecera
-        git checkout master
+    primero se debe tener todos los archivos en commit, sin aprobaciones pendientes en staging
+
+    git branch cabecera (nombre) enter
+    git show
+
+    git checkout nombre (enter)
+        de esa manera se mueve entre ramas ejemplo:
+            git checkout cabecera
+            git checkout master
 
 
 
-CLASE 16
-Fusionar dos arhivos distintos (merge)
-MERGE:
-    la rama cabecera desaparece y se une a la ruta final
-    generando una sola rama master
-Flujo de trabajo Git
+CLASE 16 Fusionar dos arhivos distintos (merge)
+    MERGE:
+        la rama cabecera desaparece y se une a la ruta final
+        generando una sola rama master
+    Flujo de trabajo Git
 
-Cuando se realizan cambios en ambos:
-El merge ocurre en la rama en la que me encuentro
-me voy a head con git checkout master
-merge cabecera
+    Cuando se realizan cambios en ambos:
+    El merge ocurre en la rama en la que me encuentro
+    me voy a head con git checkout master
+    merge cabecera
 
-git commit -am (significado) 
-            a=agregar cambios
-            m= mensaje
-
-
+    git commit -am (significado) 
+                a=agregar cambios
+                m= mensaje
 
 
 CLASE 17  Conflictos en merge
 
-Sucede cuando dos programadores modifican las mismas líneas
-Git genera un error
-<<<<<<(nombre de la rama)
-Master merging (no se completo el merge)
-dicta donde esta el problema 
-Para resolver a mano, se borra y se deja el cambio quie se quiera quedar en el archivo
-(se queda guardado el como se tenia el commit previo como cabecera)
+    Sucede cuando dos programadores modifican las mismas líneas
+    Git genera un error
+    <<<<<<(nombre de la rama)
+    Master merging (no se completo el merge)
+    dicta donde esta el problema 
+    Para resolver a mano, se borra y se deja el cambio quie se quiera quedar en el archivo
+    (se queda guardado el como se tenia el commit previo como cabecera)
 
 
 CLASE 18 Uso de github
+
+Clone HTTPS y se copia la url
+git remote add origin dirección
+    git remote (enter)
+        origin
+    git remote -v (verbal)
+        orgin:
+            fetch:
+                 traer cosas
+            push:
+                enviar cosas
+
+    git push origin master
+        se ingresa usuario y contraseña de github 
+
+    git pull origin master --alow-unrelated-histories
+        hace un merge con la rama master de hyperblog
+        
