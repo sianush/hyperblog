@@ -113,4 +113,5 @@ git remote add origin dirección
 
     git pull origin master --alow-unrelated-histories
         hace un merge con la rama master de hyperblog
-        
+
+    git config -l :
