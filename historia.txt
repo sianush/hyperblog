@@ -1,15 +1,15 @@
 Notas de Git 
 
-como volver en el tiempo para git 
-git log y se copia los códigos del git que queremos recuperar
-con git reset CODIGO del que queremos volver
-git reset hard : borra todooo!!!!!
-git reset soft : violvemos a la versión anterior sin borrar el staging
-podemos ver 
- 
- git log --stat  podemos ver loc cmabvios especificos a partir del commit
+    como volver en el tiempo para git 
+    git log y se copia los códigos del git que queremos recuperar
+    con git reset CODIGO del que queremos volver
+    git reset hard : borra todooo!!!!!
+    git reset soft : violvemos a la versión anterior sin borrar el staging
+    podemos ver 
+    
+    git log --stat  podemos ver loc cmabvios especificos a partir del commit
 
- git checkout   para ver como era el archivo antes
+    git checkout   para ver como era el archivo antes
 
 Clase 14 (repaso)
     git init
@@ -97,21 +97,84 @@ CLASE 17  Conflictos en merge
 
 CLASE 18 Uso de github
 
-Clone HTTPS y se copia la url
-git remote add origin dirección
-    git remote (enter)
-        origin
-    git remote -v (verbal)
-        orgin:
-            fetch:
-                 traer cosas
-            push:
-                enviar cosas
+    Clone HTTPS y se copia la url
+    git remote add origin dirección
+        git remote (enter)
+            origin
+        git remote -v (verbal)
+            orgin:
+                fetch:
+                    traer cosas
+                push:
+                    enviar cosas
 
-    git push origin master
-        se ingresa usuario y contraseña de github 
+        git push origin master
+            se ingresa usuario y contraseña de github 
 
-    git pull origin master --alow-unrelated-histories
-        hace un merge con la rama master de hyperblog
+        git pull origin master --alow-unrelated-histories
+            hace un merge con la rama master de hyperblog
 
-    git config -l :
+        git config -l :
+
+
+CLASE 19 LLAVES PÚBLICAS Y PRIVADAS
+    Se vinculan unas a otras, se crean las llaves al mismo tiempo y se comparten 
+        LLave publica:
+        LLave privada:
+    Las llaves públicas y privadas nos ayudan a cifrar y descifrar nuestros archivos de forma que los podamos compartir sin correr el riesgo de que sean interceptados por personas con malas intenciones.
+
+    La forma de hacerlo es la siguiente:
+
+        Ambas personas deben crear su llave pública y privada.
+        Ambas personas pueden compartir su llave pública a las otras partes (recuerda que esta llave es pública, no hay problema si la “interceptan”).
+        La persona que quiere compartir un mensaje puede usar la llave pública de la otra persona para cifrar los archivos y asegurarse que solo puedan ser descifrados con la llave privada de la persona con la que queremos compartir el mensaje.
+        El mensaje está cifrado y puede ser enviado a la otra persona sin problemas en caso de que los archivos sean interceptados.
+        La persona a la que enviamos el mensaje cifrado puede usar su llave privada para descifrar el mensaje y ver los archivos.
+        Puedes compartir tu llave pública pero nunca tu llave privada.
+
+        En la siguiente clase vamos a crear nuestras llaves para compartir archivos con GitHub sin correr el riesgo de que sean interceptados.
+
+
+CLASE 20 LLAVES SSH EN local
+
+    En tu entorno local creas una llave pública y una llave privada
+    Se envia esa llave publica  github y se le da la instrucción de utilizar es llave
+        Se conecta por SSH 
+    
+    SSH no son por repositorio o proyecto sino por persona
+
+    git config -l 
+ ssh-keygen -t rsa -b 4096 -C "correo@hhhhh"
+    ssh-keygen: generador de llaves conectado a SSH
+    -t: especificas el algoritomo que se usará para crear la llave
+    rsa: es el más popular ahora
+    -b: que tan compleja será la llave
+    4096: complejidad el la llave desde una v isión matematica
+    -C: a que correo electrónico estará conectada esta llave 
+Enter file in which to save the key (/Users/sianaanais/.ssh/id_rsa):
+    se le dice donde colocar la llave
+Enter passphrase (empty for no passphrase): pasword con espacios
+    Luna112358sur
+
+    /Users/sianaanais/.ssh/id_rsa.pub.
+     cat /Users/sianaanais/.ssh/id_rsa.pub
+        aparece la llave y el correo en la terminal 
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDVT6McZrN5VR1SkO5MjMSSL3lkYXOuvNYZHz8mvAhhfmx8RuPLD0XhmWoMBDrDvgZqQ/uoUvhVlJUdXo8584fU6P6ovcJ1opdW/gAJccpAicAH3OUZt3SK0woUf9oh222qBm+/zMd+yX19/X7bnoKxeJooSnHTmfny21ZqLgJHn30VeN6vTYHtKrmUwFDVJkDXnNd0nRlOLyrfIPmnnbfIRmuJc2KFQL9MG5YbTDwfqEAACZ6Q0hKQNaL8UEG4nxVlamDbpGxLmZu/OZFsh4Wbz3kDO+pTTaxG8h4tgCsOTmMZYQXRwxGYncbHCqCohnB9LNVxth1cKNBlhAzwftaJ31DaRmQ10nNVpxY2OZhC1xcHHyLAN5c7qSerIKlDLJ8utZpe/PSA+eayOh6jmb9TNh4IdUiKpOoJ5vDkPnixhj7UYbk222TskGSv2GU0JEb7AfVHPzUGM6lUhAd5ay5CVZnq+0r2lwIKkbUQdcV6K2tcBrEgHoz+/vRDuuVMPJx4t+Bp0/KvBEyPgVsc15YoD6G/2lP05mUrcg44q9++/+SVIYuIgvGIhxbmvkK4LQZ3bkBdQTw9/Dh3X5ogaFQ3rlUFtg4Cbqaw7BB3S5DLAVbmLhVa6b8mT10xXZXN1izWIQE2xSNmh3euyWxYaHfnmHeoI4uwWikgcFLhHjOGOw== sianush.sian@gmailcom
+        WINDOWS:  revisar que el serviudor de llaves este encendido
+            1.-eval $(ssh-agent -s) y se ve si el proceso correo
+            2.- agregar la llave al 
+        MAC:
+            1.- eval "$(ssh-agent -s)"
+            2.- agregar el comando vim config
+                Host *
+                (tab) AddKeysToAgent yes 
+                        UseKeychain yes 
+                        IdentifyFile ~/.ssh
+            3.- cd: para volver al home 
+            4.- ssh-add -K ~/.ssh/id_rsa (la llave privada)
+                -K keychain de mac, para poder agregarlo
+            5.- github: 
+                Se debe sustituir el hhtps por sshcon
+                git rempte set-url origin 
+
+                git@github.com:sianush/hyperblog.git
