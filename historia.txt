@@ -178,3 +178,6 @@ Enter passphrase (empty for no passphrase): pasword con espacios
                 git rempte set-url origin 
 
                 git@github.com:sianush/hyperblog.git
+        git pull origin master (trae los ultimos cambios)
+        git push origin master (sube los archivos)
+        
