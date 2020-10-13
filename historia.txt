@@ -135,49 +135,63 @@ CLASE 19 LLAVES PÚBLICAS Y PRIVADAS
         En la siguiente clase vamos a crear nuestras llaves para compartir archivos con GitHub sin correr el riesgo de que sean interceptados.
 
 
-CLASE 20 LLAVES SSH EN local
+CLASE 20 y 21 LLAVES SSH EN local
 
-    En tu entorno local creas una llave pública y una llave privada
-    Se envia esa llave publica  github y se le da la instrucción de utilizar es llave
-        Se conecta por SSH 
-    
-    SSH no son por repositorio o proyecto sino por persona
-
-    git config -l 
- ssh-keygen -t rsa -b 4096 -C "correo@hhhhh"
-    ssh-keygen: generador de llaves conectado a SSH
-    -t: especificas el algoritomo que se usará para crear la llave
-    rsa: es el más popular ahora
-    -b: que tan compleja será la llave
-    4096: complejidad el la llave desde una v isión matematica
-    -C: a que correo electrónico estará conectada esta llave 
-Enter file in which to save the key (/Users/sianaanais/.ssh/id_rsa):
-    se le dice donde colocar la llave
-Enter passphrase (empty for no passphrase): pasword con espacios
-    Luna112358sur
-
-    /Users/sianaanais/.ssh/id_rsa.pub.
-     cat /Users/sianaanais/.ssh/id_rsa.pub
-        aparece la llave y el correo en la terminal 
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDVT6McZrN5VR1SkO5MjMSSL3lkYXOuvNYZHz8mvAhhfmx8RuPLD0XhmWoMBDrDvgZqQ/uoUvhVlJUdXo8584fU6P6ovcJ1opdW/gAJccpAicAH3OUZt3SK0woUf9oh222qBm+/zMd+yX19/X7bnoKxeJooSnHTmfny21ZqLgJHn30VeN6vTYHtKrmUwFDVJkDXnNd0nRlOLyrfIPmnnbfIRmuJc2KFQL9MG5YbTDwfqEAACZ6Q0hKQNaL8UEG4nxVlamDbpGxLmZu/OZFsh4Wbz3kDO+pTTaxG8h4tgCsOTmMZYQXRwxGYncbHCqCohnB9LNVxth1cKNBlhAzwftaJ31DaRmQ10nNVpxY2OZhC1xcHHyLAN5c7qSerIKlDLJ8utZpe/PSA+eayOh6jmb9TNh4IdUiKpOoJ5vDkPnixhj7UYbk222TskGSv2GU0JEb7AfVHPzUGM6lUhAd5ay5CVZnq+0r2lwIKkbUQdcV6K2tcBrEgHoz+/vRDuuVMPJx4t+Bp0/KvBEyPgVsc15YoD6G/2lP05mUrcg44q9++/+SVIYuIgvGIhxbmvkK4LQZ3bkBdQTw9/Dh3X5ogaFQ3rlUFtg4Cbqaw7BB3S5DLAVbmLhVa6b8mT10xXZXN1izWIQE2xSNmh3euyWxYaHfnmHeoI4uwWikgcFLhHjOGOw== sianush.sian@gmailcom
-        WINDOWS:  revisar que el serviudor de llaves este encendido
-            1.-eval $(ssh-agent -s) y se ve si el proceso correo
-            2.- agregar la llave al 
-        MAC:
-            1.- eval "$(ssh-agent -s)"
-            2.- agregar el comando vim config
-                Host *
-                (tab) AddKeysToAgent yes 
-                        UseKeychain yes 
-                        IdentifyFile ~/.ssh
-            3.- cd: para volver al home 
-            4.- ssh-add -K ~/.ssh/id_rsa (la llave privada)
-                -K keychain de mac, para poder agregarlo
-            5.- github: 
-                Se debe sustituir el hhtps por sshcon
-                git rempte set-url origin 
-
-                git@github.com:sianush/hyperblog.git
-        git pull origin master (trae los ultimos cambios)
-        git push origin master (sube los archivos)
+        En tu entorno local creas una llave pública y una llave privada
+        Se envia esa llave publica  github y se le da la instrucción de utilizar es llave
+            Se conecta por SSH 
         
+        SSH no son por repositorio o proyecto sino por persona
+
+        git config -l 
+    ssh-keygen -t rsa -b 4096 -C "correo@hhhhh"
+        ssh-keygen: generador de llaves conectado a SSH
+        -t: especificas el algoritomo que se usará para crear la llave
+        rsa: es el más popular ahora
+        -b: que tan compleja será la llave
+        4096: complejidad el la llave desde una v isión matematica
+        -C: a que correo electrónico estará conectada esta llave 
+    Enter file in which to save the key (/Users/sianaanais/.ssh/id_rsa):
+        se le dice donde colocar la llave
+    Enter passphrase (empty for no passphrase): pasword con espacios
+        Luna112358sur
+
+        /Users/sianaanais/.ssh/id_rsa.pub.
+        cat /Users/sianaanais/.ssh/id_rsa.pub
+            aparece la llave y el correo en la terminal 
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDVT6McZrN5VR1SkO5MjMSSL3lkYXOuvNYZHz8mvAhhfmx8RuPLD0XhmWoMBDrDvgZqQ/uoUvhVlJUdXo8584fU6P6ovcJ1opdW/gAJccpAicAH3OUZt3SK0woUf9oh222qBm+/zMd+yX19/X7bnoKxeJooSnHTmfny21ZqLgJHn30VeN6vTYHtKrmUwFDVJkDXnNd0nRlOLyrfIPmnnbfIRmuJc2KFQL9MG5YbTDwfqEAACZ6Q0hKQNaL8UEG4nxVlamDbpGxLmZu/OZFsh4Wbz3kDO+pTTaxG8h4tgCsOTmMZYQXRwxGYncbHCqCohnB9LNVxth1cKNBlhAzwftaJ31DaRmQ10nNVpxY2OZhC1xcHHyLAN5c7qSerIKlDLJ8utZpe/PSA+eayOh6jmb9TNh4IdUiKpOoJ5vDkPnixhj7UYbk222TskGSv2GU0JEb7AfVHPzUGM6lUhAd5ay5CVZnq+0r2lwIKkbUQdcV6K2tcBrEgHoz+/vRDuuVMPJx4t+Bp0/KvBEyPgVsc15YoD6G/2lP05mUrcg44q9++/+SVIYuIgvGIhxbmvkK4LQZ3bkBdQTw9/Dh3X5ogaFQ3rlUFtg4Cbqaw7BB3S5DLAVbmLhVa6b8mT10xXZXN1izWIQE2xSNmh3euyWxYaHfnmHeoI4uwWikgcFLhHjOGOw== sianush.sian@gmailcom
+            WINDOWS:  revisar que el serviudor de llaves este encendido
+                1.-eval $(ssh-agent -s) y se ve si el proceso correo
+                2.- agregar la llave al 
+            MAC:
+                1.- eval "$(ssh-agent -s)"
+                2.- agregar el comando vim config
+                    Host *
+                    (tab) AddKeysToAgent yes 
+                            UseKeychain yes 
+                            IdentifyFile ~/.ssh
+                3.- cd: para volver al home 
+                4.- ssh-add -K ~/.ssh/id_rsa (la llave privada)
+                    -K keychain de mac, para poder agregarlo
+                5.- github: 
+                    Se debe sustituir el hhtps por sshcon
+                    git rempte set-url origin 
+
+                    git@github.com:sianush/hyperblog.git
+            git pull origin master (trae los ultimos cambios)
+            git push origin master (sube los archivos)
+
+CLASE 22 TAGS GIT GitHub
+    git log --all: muestra todos los commits
+    git log --all -- graph: muestra las ramas o branches 
+    git log --all -- graph -- decorate --oneline: comprimido
+     alias arbolito="git log --all -- graph -- decorate --oneline" genera alias
+    
+    crear: git tag -a v0.2 -m "resultados git 2" 88871562fb3acfe2de33dd13ecf10034036ffc8
+    checar: git show-ref --tag
+    
+    Crear un nuevo tag y asignarlo a un commit: git tag -a nombre-del-tag id-del-commit.
+    Borrar un tag en el repositorio local: git tag -d nombre-del-tag.
+    Listar los tags de nuestro repositorio local: git tag o git show-ref --tags.
+    Publicar un tag en el repositorio remoto: git push origin --tags.
+    Borrar un tag del repositorio remoto: git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag.
